@@ -21,6 +21,16 @@ window.onscroll = () => {
 }
 
 menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
+    menuIcon.classList.toggle('bx-x'); // Cambia el icono de las barras
+    navbar.classList.toggle('active'); // Muestra/oculta el menú
 }
+
+// Cerrar el menú al hacer clic en un enlace del menú (para móviles)
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 995) {
+            navbar.classList.remove('active');
+            menuIcon.classList.remove('bx-x');
+        }
+    });
+});

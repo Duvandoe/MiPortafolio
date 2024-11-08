@@ -41,18 +41,19 @@ html::-webkit-scrollbar-thumb{
     background: var(--main-color);
 }
 
-.header{
+.header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 3rem 9%;
+    padding: 2rem 5%;
     background: rgba(0, 0, 0, 0.8);
     filter: drop-shadow(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    transition: 0.3s ease;
 }
 
 .logo {
@@ -67,7 +68,7 @@ html::-webkit-scrollbar-thumb{
     transform: scale(1.1);
 }
 
-.navbar a{
+.navbar a {
     font-size: 1.8rem;
     color: var(--text-color);
     margin-left: 4rem;
@@ -81,63 +82,72 @@ html::-webkit-scrollbar-thumb{
     border-bottom: 3px solid var(--main-color);
 }
 
-#menu-icon{
+/* Icono de menú para pantallas móviles */
+#menu-icon {
     font-size: 3.6rem;
     color: var(--main-color);
     display: none;
+    cursor: pointer;
 }
 
-/* Navegación móvil */
+/* Navegación móvil - Mostrar el menú cuando el icono de menú se activa */
 @media screen and (max-width: 600px) {
     .navbar {
         display: none;
         flex-direction: column;
-    }
-    .navbar.active {
-        display: flex;
-    }
-}
-@media screen and (max-width: 600px) {
-    h2 {
-        font-size: 1.5rem;
-    }
-    p {
-        font-size: 1rem;
-    }
-}
-
-@media(max-width:995px){
-    #menu-icon{
-        display: block;
-    }
-
-    .navbar{
+        align-items: center;
         position: absolute;
         top: 100%;
+        left: 0;
         right: 0;
-        width: 40%;
-        border-left: 3px solid var(--main-color);
-        border-bottom: 3px solid var(--main-color);
-        border-bottom-left-radius: 2rem;
-        padding: 1rem 3%;
         background-color: var(--second-bg-color);
+        padding: 2rem 3%;
         border-top: 0.1rem solid rgba(0, 0, 0, 0.4);
-        display: none;
+        border-radius: 1rem;
+        transition: transform 0.3s ease;
     }
-    .navbar.active{
-        display: block;
+
+    .navbar.active {
+        display: flex;
+        transform: translateY(0); /* Se muestra el menú con deslizamiento */
     }
-    .navbar a{
+
+    .navbar a {
         display: block;
         font-size: 2rem;
-        margin: 3rem 0;
-    }
-    .navbar a:hover, .navbar a.active{
+        margin: 2rem 0;
+        color: var(--text-color);
         padding: 1rem;
+        text-align: center;
+        transition: 0.3s ease;
+    }
+
+    .navbar a:hover, .navbar a.active {
+        background: var(--main-color);
+        color: var(--bg-color);
         border-radius: 0.5rem;
         border-bottom: 0.5rem solid var(--main-color);
     }
 
+    #menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 995px) {
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background-color: var(--second-bg-color);
+        padding: 1rem;
+        display: none;
+    }
+    .navbar.active {
+        display: block;
+    }
 }
 
 section{
