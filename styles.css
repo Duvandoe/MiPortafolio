@@ -367,9 +367,9 @@ span {
     background: var(--second-bg-color);
 }
 
-.heading{
+.heading {
     text-align: center;
-    font-size: 4rem;
+    font-size: 3rem; /* Ajuste de tamaño de fuente */
     margin-bottom: 3rem;
     font-weight: 500;
     color: var(--main-color);
@@ -382,12 +382,17 @@ span {
     gap: 2.5rem;
 }
 
-.servicio-box{
+.servicio-box {
     background-color: var(--main-color);
     height: 300px;
     border-radius: 3rem;
     cursor: pointer;
     transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
 }
 
 .servicio-box:hover{
@@ -407,26 +412,73 @@ span {
     padding: 5em;
 }
 
-.servicio-info h4{
-    font-size: 2.5rem;
+.servicio-info h4 {
+    font-size: 2rem; /* Ajuste de tamaño de fuente */
     font-weight: 500;
     margin-bottom: 1rem;
 }
 
-.servicio-info p{
-    font-size: 1.6rem;
+.servicio-info p {
+    font-size: 1.4rem; /* Ajuste de tamaño de fuente */
     font-weight: 400;
     max-height: 100px;
     margin: auto;
+    line-height: 1.5;
+    padding: 0 1rem;
 }
 
-@media (max-width: 991px){
-    section{
-        padding: 10rem 3% 2rem;
+/* Media Queries para dispositivos más pequeños */
+@media (max-width: 991px) {
+    section {
+        padding: 5rem 3% 2rem; /* Reducimos el espaciado en la sección */
     }
 
-    .servicio{
-        padding-bottom: 7rem;
+    .servicio {
+        padding-bottom: 4rem;
+    }
+
+    .heading {
+        font-size: 2.5rem; /* Ajustamos el tamaño del título */
+        margin-bottom: 2rem;
+    }
+
+    /* Ajuste de la cuadrícula a una sola columna en pantallas más pequeñas */
+    .servicio-container {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.5rem;
+    }
+
+    /* Ajuste de la caja de los servicios */
+    .servicio-box {
+        height: auto; /* Permite que las cajas se adapten a contenido variable */
+        padding: 2rem; /* Aumentamos el espaciado interno para mejorar la estética */
+    }
+
+    .servicio-info h4 {
+        font-size: 1.8rem; /* Ajustamos el tamaño del título */
+    }
+
+    .servicio-info p {
+        font-size: 1.2rem; /* Ajustamos el tamaño del párrafo */
+    }
+}
+
+@media (max-width: 600px) {
+    .heading {
+        font-size: 2rem; /* Ajustamos el tamaño del título */
+    }
+
+    .servicio-box {
+        height: auto;
+        padding: 1.5rem;
+    }
+
+    .servicio-info h4 {
+        font-size: 1.6rem; /* Ajustamos el tamaño del título */
+    }
+
+    .servicio-info p {
+        font-size: 1rem; /* Ajustamos el tamaño del párrafo */
     }
 }
 
