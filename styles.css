@@ -87,6 +87,17 @@ html::-webkit-scrollbar-thumb{
     display: none;
 }
 
+/* Navegación móvil */
+@media screen and (max-width: 600px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+    }
+    .navbar.active {
+        display: flex;
+    }
+}
+
 @media(max-width:995px){
     #menu-icon{
         display: block;
@@ -397,7 +408,8 @@ span {
     color: var(--text-color);
     border-radius: 1rem;
     padding: 2rem;
-    width: 70%;
+    width: 90%;
+    max-width: 1200px;
     margin: auto;
     margin-top: 2rem;
 }
@@ -405,7 +417,6 @@ span {
 .habilidad .container .row{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    flex-wrap: wrap;
     gap: 1.8rem;
 }
 
@@ -438,8 +449,31 @@ span {
 }
 
 .habilidad .container .bar .info img{
-    width: 7rem;
+    width: 100%;
+    max-width: 7rem;
 }
+
+/* Ajuste para pantallas medianas */
+@media (max-width: 992px) {
+    .habilidad .container .row {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas medianas */
+    }
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+    .habilidad .container .row {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
+    }
+}
+
+/* Ajuste para móviles */
+@media (max-width: 480px) {
+    .habilidad .container .row {
+        grid-template-columns: 1fr; /* 1 columna en pantallas móviles */
+    }
+}
+
 
 /*Seccion de educacion*/
 
@@ -602,15 +636,14 @@ span {
     color: var(--text-color);
     border-radius: 1rem;
     padding: 2rem;
-    width: 70%;
+    width: 90%;
     margin: auto;
     margin-top: 2rem;
 }
 
 .proyecto .container .row{
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    flex-wrap: wrap;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
@@ -637,14 +670,38 @@ span {
 }
 
 .proyecto .container .bar .info a{
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 500;
     margin-left: 0.5rem;
 }
 .proyecto .container .bar .info img{
-    width: 15rem;
+    width: 12rem;
 }
 
+/* Cambiar el diseño de la rejilla según el tamaño de la pantalla */
+@media (min-width: 992px) {
+    .proyecto .container .row {
+        grid-template-columns: repeat(4, 1fr); /* 4 columnas en pantallas grandes */
+    }
+}
+
+@media (min-width: 1200px) {
+    .proyecto .container .row {
+        grid-template-columns: repeat(6, 1fr); /* 6 columnas en pantallas extra grandes */
+    }
+}
+
+@media (max-width: 768px) {
+    .proyecto .container {
+        padding: 1.5rem; /* Reducir padding en pantallas pequeñas */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .proyecto .container .row {
+        grid-template-columns: repeat(2, 1fr); /* 4 columnas en pantallas grandes */
+    }
+}
 /*Seccion de contacto*/
 
 .contacto h2 {
