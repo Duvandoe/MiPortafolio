@@ -306,6 +306,10 @@ span {
     }
 }
 
+.d-none{
+    content: hidden;
+}
+
 @keyframes cursor {
     to{
         border-left: 3px solid var(--main-color); 
