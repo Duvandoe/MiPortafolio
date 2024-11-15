@@ -496,7 +496,7 @@ span {
     }
 }
 
-@media (max-width:895px){
+@media (max-width:400px){
     .servicio h2{
         margin-bottom: 3rem;
     }
