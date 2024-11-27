@@ -822,8 +822,8 @@ span {
     flex-wrap: wrap;
 }
 
-.contacto form .input-box input,
-.contacto form textarea {
+.contacto-content form ,.contacto-content input,
+.contacto-content form textarea {
     width: 100%;
     padding: 1.5rem;
     font-size: 1.6rem;
