@@ -806,6 +806,11 @@ span {
     }
 }
 /* Estilos generales */
+
+.contacto{
+    background: var(--second-bg-color);
+}
+
 .contacto h2 {
     margin-bottom: 3rem;
     color: white;
