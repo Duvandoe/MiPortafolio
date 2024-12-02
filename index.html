@@ -243,20 +243,24 @@
         </div>
     </section>
 
-    <!--Seccion de contacto-->
-    <section class="contacto" id="contacto">
-        <h2 class="heading">Mi <span>Contacto</span></h2>
-        <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" >
-            <input type="hidden" name="form-name" value="contact">
-            <div class="input-box">
-                <input type="text" name="name" placeholder="Nombre" required>
-                <input type="email" name="email" placeholder="Correo" pattern="[a-zA-Z0-9._%+-]" maxlength="50" required>
-                <input type="number" name="number" placeholder="Numero de telefono" required>
-            </div>
-            <textarea name="message" id="" cols="30" rows="10" placeholder="Tu mensaje"></textarea>
-            <input type="submit" value="Enviar mensaje" class="btn">
-        </form>
-    </section>
+   <!-- Sección de contacto -->
+<section class="contacto" id="contacto">
+    <h2 class="heading">Mi <span>Contacto</span></h2>
+    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        
+        <div class="input-box">
+            <input type="text" name="name" placeholder="Nombre" required>
+            <input type="email" name="email" placeholder="Correo" pattern="[a-zA-Z0-9._%+-]" maxlength="50" required>
+            <input type="number" name="number" placeholder="Número de teléfono" required>
+        </div>
+
+        <textarea name="message" cols="30" rows="10" placeholder="Tu mensaje"></textarea>
+        
+        <input type="submit" value="Enviar mensaje" class="btn">
+    </form>
+</section>
+
 
     <!--Pie de pagina-->
     <footer class="footer">

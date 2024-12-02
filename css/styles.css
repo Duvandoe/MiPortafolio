@@ -736,7 +736,7 @@ span {
     color: var(--text-color);
     border-radius: 1rem;
     padding: 2rem;
-    width: 90%;
+    width: 75%;
     margin: auto;
     margin-top: 2rem;
 }
@@ -801,9 +801,11 @@ span {
     .proyecto .container .row {
         grid-template-columns: repeat(2, 1fr); /* 4 columnas en pantallas grandes */
     }
+    .proyecto .container {
+        width: 100%;
+    }
 }
-/*Seccion de contacto*/
-
+/* Estilos generales */
 .contacto h2 {
     margin-bottom: 3rem;
     color: white;
@@ -822,8 +824,8 @@ span {
     flex-wrap: wrap;
 }
 
-.contacto-content form ,.contacto-content input,
-.contacto-content form textarea {
+.contacto form input,
+.contacto form textarea {
     width: 100%;
     padding: 1.5rem;
     font-size: 1.6rem;
@@ -835,8 +837,62 @@ span {
     resize: none;
 }
 
+/* Estilo del botón */
 .contacto form .btn {
     margin-top: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    color: white;
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 0.8rem;
+    cursor: pointer;
+}
+
+.contacto form .btn:hover {
+    background-color: var(--hover-color);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .contacto form {
+        max-width: 90%;
+        padding: 1rem;
+    }
+
+    .contacto h2 {
+        font-size: 2.4rem;
+        margin-bottom: 2rem;
+    }
+
+    .contacto form input,
+    .contacto form textarea {
+        padding: 1.2rem;
+        font-size: 1.4rem;
+    }
+
+    .contacto form .btn {
+        font-size: 1.4rem;
+        padding: 1rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contacto h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .contacto form input,
+    .contacto form textarea {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+
+    .contacto form .btn {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.6rem;
+    }
 }
 
 
