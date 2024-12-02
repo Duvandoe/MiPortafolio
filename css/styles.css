@@ -372,8 +372,7 @@ span {
 }
 
 
-/* Seccion de servicio*/
-
+/* Sección de servicio */
 .servicio {
     background: var(--second-bg-color);
     padding: 2rem 1rem;
@@ -387,15 +386,17 @@ span {
     color: var(--main-color);
 }
 
+/* Contenedor de los servicios usando Flexbox */
 .servicio-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+    justify-content: space-between; /* Distribuye el espacio entre los items */
     gap: 2rem;
 }
 
 .servicio-box {
     background-color: var(--main-color);
+    flex: 1 1 calc(45% - 2rem); /* Ajustado a 45% del ancho para más espacio entre los elementos */
     height: auto;
     border-radius: 2rem;
     cursor: pointer;
@@ -407,14 +408,14 @@ span {
     padding: 1.5rem;
 }
 
-.servicio-box:hover{
+.servicio-box:hover {
     background: black;
     color: var(--main-color);
     transform: scale(1.05);
     border: 1px solid var(--main-color);
 }
 
-.servicio-box .servicio-info{
+.servicio-box .servicio-info {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -435,67 +436,71 @@ span {
 }
 
 /* Media Queries para dispositivos más pequeños */
+
+/* Pantallas más grandes (991px o menos) */
 @media (max-width: 991px) {
     .servicio-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-
-    .heading {
-        font-size: 2rem;
+        justify-content: center;
     }
 
     .servicio-box {
-        padding: 1.5rem;
-    }
-
-    .servicio-info h4 {
-        font-size: 1.6rem;
-    }
-
-    .servicio-info p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .servicio-container {
-        grid-template-columns: 1fr; /* Columna única en pantallas pequeñas */
+        flex: 1 1 calc(45% - 2rem); /* 2 cajas por fila, con mayor espacio */
     }
 
     .heading {
-        font-size: 1.8rem;
+        font-size: 2.2rem; /* Aumentamos el tamaño de la fuente */
+    }
+
+    .servicio-info h4 {
+        font-size: 1.8rem; /* Aumentamos el tamaño de la fuente */
+    }
+
+    .servicio-info p {
+        font-size: 1.4rem; /* Aumentamos el tamaño de la fuente */
+    }
+}
+
+/* Pantallas pequeñas (600px o menos) */
+@media (max-width: 600px) {
+    .servicio-container {
+        justify-content: center;
+    }
+
+    .servicio-box {
+        flex: 1 1 100%; /* 1 caja por fila */
+    }
+
+    .heading {
+        font-size: 2rem; /* Aumentamos el tamaño de la fuente */
         margin-bottom: 1.5rem;
     }
 
-    .servicio-box {
-        padding: 1rem;
-    }
-
     .servicio-info h4 {
-        font-size: 1.5rem;
+        font-size: 1.7rem; /* Aumentamos el tamaño de la fuente */
     }
 
     .servicio-info p {
-        font-size: 0.9rem;
+        font-size: 1.3rem; /* Aumentamos el tamaño de la fuente */
     }
 }
 
-
+/* Pantallas muy pequeñas (480px o menos) */
 @media (max-width: 480px) {
     .heading {
-        font-size: 1.8rem;
+        font-size: 1.8rem; /* Aumentamos el tamaño de la fuente */
         margin-bottom: 1rem;
     }
 
     .servicio-info h4 {
-        font-size: 1.4rem;
+        font-size: 1.5rem; /* Aumentamos el tamaño de la fuente */
     }
 
     .servicio-info p {
-        font-size: 0.85rem;
+        font-size: 1.2rem; /* Aumentamos el tamaño de la fuente */
     }
 }
+
+
 
 /*Seccion de habilidades*/
 
