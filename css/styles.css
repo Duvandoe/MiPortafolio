@@ -390,34 +390,35 @@ span {
 .servicio-container {
     display: flex;
     flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
-    justify-content: space-between; /* Distribuye el espacio entre los items */
+    justify-content: center; /* Centra los elementos */
     gap: 2rem;
 }
 
 .servicio-box {
     background-color: var(--main-color);
-    flex: 1 1 calc(45% - 2rem); /* Ajustado a 45% del ancho para más espacio entre los elementos */
-    height: auto;
-    border-radius: 2rem;
+    flex: 1 1 calc(50% - 2rem); /* Más compacto, ajustado a 40% del ancho */
+    max-width: 500px;
+    border-radius: 1.5rem;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1.5rem;
+    padding: 1rem; /* Reduce el padding */
+    height: 200px; /* Altura específica para consistencia visual */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .servicio-box:hover {
     background: black;
     color: var(--main-color);
     transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     border: 1px solid var(--main-color);
 }
 
 .servicio-box .servicio-info {
-    display: flex;
-    flex-direction: column;
     text-align: center;
     padding: 1rem;
 }
@@ -426,77 +427,73 @@ span {
     font-size: 1.8rem;
     font-weight: 500;
     margin-bottom: 0.8rem;
+    color: white; /* Texto en blanco para mayor contraste */
 }
 
 .servicio-info p {
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.5;
-    padding: 0 1rem;
+    color: white; /* Texto en blanco para consistencia */
 }
 
 /* Media Queries para dispositivos más pequeños */
 
-/* Pantallas más grandes (991px o menos) */
+/* Pantallas medianas (991px o menos) */
 @media (max-width: 991px) {
     .servicio-container {
-        justify-content: center;
+        gap: 1.5rem; /* Reduce el espacio entre elementos */
     }
 
     .servicio-box {
-        flex: 1 1 calc(45% - 2rem); /* 2 cajas por fila, con mayor espacio */
+        flex: 1 1 calc(55% - 2rem); /* Un poco más grande para pantallas medianas */
+        height: 220px; /* Ajuste de altura */
     }
-
     .heading {
-        font-size: 2.2rem; /* Aumentamos el tamaño de la fuente */
-    }
-
-    .servicio-info h4 {
-        font-size: 1.8rem; /* Aumentamos el tamaño de la fuente */
-    }
-
-    .servicio-info p {
-        font-size: 1.4rem; /* Aumentamos el tamaño de la fuente */
+        font-size: 2.2rem;
     }
 }
 
 /* Pantallas pequeñas (600px o menos) */
 @media (max-width: 600px) {
-    .servicio-container {
-        justify-content: center;
-    }
-
     .servicio-box {
-        flex: 1 1 100%; /* 1 caja por fila */
+        flex: 1 1 calc(100% - 2rem); /* 1 caja por fila */
+        height: auto; /* Altura dinámica para contenido */
+        padding: 1rem; /* Reduce el padding */
     }
 
     .heading {
-        font-size: 2rem; /* Aumentamos el tamaño de la fuente */
-        margin-bottom: 1.5rem;
+        font-size: 2rem;
+        margin-bottom: 2rem;
     }
 
     .servicio-info h4 {
-        font-size: 1.7rem; /* Aumentamos el tamaño de la fuente */
+        font-size: 1.6rem;
     }
 
     .servicio-info p {
-        font-size: 1.3rem; /* Aumentamos el tamaño de la fuente */
+        font-size: 1.3rem;
     }
 }
 
 /* Pantallas muy pequeñas (480px o menos) */
 @media (max-width: 480px) {
     .heading {
-        font-size: 1.8rem; /* Aumentamos el tamaño de la fuente */
+        font-size: 1.8rem;
         margin-bottom: 1rem;
     }
 
+    .servicio-box {
+        height: auto; /* Mantiene altura dinámica */
+        padding: 0.8rem; /* Aún más compacto */
+    }
+
     .servicio-info h4 {
-        font-size: 1.5rem; /* Aumentamos el tamaño de la fuente */
+        font-size: 1.4rem;
     }
 
     .servicio-info p {
-        font-size: 1.2rem; /* Aumentamos el tamaño de la fuente */
+        font-size: 1.2rem;
     }
 }
 
